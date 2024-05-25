@@ -2,6 +2,7 @@
 
 function isEnoughCapacity(products, containerSize) {
 
+  
   // poniżej zwrócenie wartości z products w postaci nowej tablicy
 
   const tags = [];
@@ -12,14 +13,14 @@ function isEnoughCapacity(products, containerSize) {
   // zwróciło tablicę stringów, więc poniżej zamiana na tablicę liczb
 
   let numberTags = tags.map(Number);
-
+  
   // poniżej sumowanie elementów tablicy
   
   let sum = 0;
   for (let i = 0; i < numberTags.length; i++) {
     sum += numberTags[i];
   }
-
+  
   // poniżej porównanie sumy tablicy i containerSize
 
   return (sum <= containerSize);
