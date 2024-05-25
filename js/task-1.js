@@ -2,8 +2,7 @@
 
 function isEnoughCapacity(products, containerSize) {
 
-  
-  // poniżej zwrócenie wartości z products w postaci nowej tablicy
+  // poniżej zwrócenie wartości z 'products' do postaci nowej tablicy
 
   const tags = [];
   for (const key in products) {
