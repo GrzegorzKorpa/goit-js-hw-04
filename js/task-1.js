@@ -2,25 +2,25 @@
 
 function isEnoughCapacity(products, containerSize) {
 
-  // poniżej zwrócenie wartości z 'products' do postaci nowej tablicy
+  // Poniżej zwrócenie wartości z 'products' do postaci nowej tablicy
 
   const tags = [];
   for (const key in products) {
     tags.push(`${products[key]}`)
   };
 
-  // zwróciło tablicę stringów, więc poniżej zamiana na tablicę liczb
+  // Zwróciło tablicę stringów, więc poniżej zamiana na tablicę liczb
 
   let numberTags = tags.map(Number);
   
-  // poniżej sumowanie elementów tablicy
+  // Poniżej sumowanie elementów tablicy
   
   let sum = 0;
   for (let i = 0; i < numberTags.length; i++) {
     sum += numberTags[i];
   }
   
-  // poniżej porównanie sumy tablicy i containerSize
+  // Poniżej wynik - porównanie sumy tablicy i containerSize
 
   return (sum <= containerSize);
   

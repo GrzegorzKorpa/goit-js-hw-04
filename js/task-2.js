@@ -2,8 +2,8 @@
 
 function calcAverageCalories(days) {
 
-    // Nie udawało mi się działać bezpośrednio na 'days' i poniżej 
-    // zdefiniowałem tablicę 'weekDays' zawierającą 'days'
+    // Nie udawało mi się działać bezpośrednio na 'days', 
+    // dlatego zdefiniowałem tablicę 'weekDays' zawierającą 'days'
     
     const weekDays = days;
 
@@ -21,7 +21,7 @@ function calcAverageCalories(days) {
         sum += weekCalories[i];
     }
     
-    // Obliczenie średniej
+    // Poniżej wynik - obliczenie średniej
     
     return (sum / weekCalories.length);
 
