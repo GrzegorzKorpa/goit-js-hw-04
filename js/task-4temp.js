@@ -1,45 +1,58 @@
 'use strict';
 
-function isEnoughCapacity(products, containerSize) {
+function calcAverageCalories(days) {
 
-  // Poniżej zwrócenie wartości z 'products' do postaci nowej tablicy
+    // Nie udawało mi się działać bezpośrednio na 'days', 
+    // dlatego zdefiniowałem tablicę 'weekDays' zawierającą 'days'
+    
+    const weekDays = days;
 
-  const tags = [];
-  for (const key in products) {
-    tags.push(`${products[key]}`)
-  };
+    // Poniżej zwrot 'calories' w postaci tablicy 'weekCalories';
 
-  // Zwróciło tablicę stringów, więc poniżej zamiana na tablicę liczb
+    const weekCalories = [];
+    for (const weekDay of weekDays) {
+        weekCalories.push(weekDay.calories);
+    }
 
-  let numberTags = tags.map(Number);
-  
-  // Poniżej sumowanie elementów tablicy
-  
-  let sum = 0;
-  for (let i = 0; i < numberTags.length; i++) {
-    sum += numberTags[i];
-  }
-  
-  // Poniżej wynik - porównanie sumy tablicy i containerSize
+    // Sumowanie 'calories' z tablicy 'weekCalories';
 
-  return (sum <= containerSize);
+    let sum = 0;
+    for (let i = 0; i < weekCalories.length; i++) {
+        sum += weekCalories[i];
+    }
+    
+    // Poniżej wynik - obliczenie średniej
+    
+    return (sum / weekCalories.length);
 
-  
-
+    
 }
+
+   
 console.log(
-  isEnoughCapacity({ apples: 2, grapes: 3, carrots: 1 }, 8)
-); // true
+  calcAverageCalories([
+    { day: "monday", calories: 3010 },
+    { day: "tuesday", calories: 3200 },
+    { day: "wednesday", calories: 3120 },
+    { day: "thursday", calories: 2900 },
+    { day: "friday", calories: 3450 },
+    { day: "saturday", calories: 3280 },
+    { day: "sunday", calories: 3300 }
+  ])
+); // 3180
 
 console.log(
-  isEnoughCapacity({ apples: 4, grapes: 6, lime: 16 }, 12)
-); // false
+  calcAverageCalories([
+    { day: "monday", calories: 2040 },
+    { day: "tuesday", calories: 2270 },
+    { day: "wednesday", calories: 2420 },
+    { day: "thursday", calories: 1900 },
+    { day: "friday", calories: 2370 },
+    { day: "saturday", calories: 2280 },
+    { day: "sunday", calories: 2610 }
+  ])
+); // 2270
 
 console.log(
-  isEnoughCapacity({ apples: 1, lime: 5, tomatos: 3 }, 14)
-); // true
-
-console.log(
-  isEnoughCapacity({ apples: 18, potatos: 5, oranges: 2 }, 7)
-); // false
-
+  calcAverageCalories([])
+); // 0
