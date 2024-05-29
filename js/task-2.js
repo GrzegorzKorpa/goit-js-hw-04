@@ -22,8 +22,12 @@ function calcAverageCalories(days) {
   }
     
   // Poniżej wynik - obliczenie średniej
- 
+  if (weekCalories.length > 0) {
     return (sum / weekCalories.length);
+  }
+  else {
+    return 0;
+  }
     
 }
 
