@@ -2,12 +2,13 @@
 
 function isEnoughCapacity(products, containerSize) {
 
-  // Poniżej zwrócenie wartości z 'products' do postaci nowej tablicy
-
-  const tags = [];
+ 
   for (const key in products) {
-    tags.push(`${products[key]}`)
-  };
+    console.log(products[key]);
+   
+}
+ 
+  
 
   // Zwróciło tablicę stringów, więc poniżej zamiana na tablicę liczb
 
